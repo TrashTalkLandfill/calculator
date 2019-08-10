@@ -83,12 +83,13 @@ const performCalculation = () => {
     secondInput = parseFloat(display.textContent);
     display.textContent = operator(firstInput, secondInput, operation);
     console.log(`Performed the operation ${firstInput} ${operation} ${secondInput}`)
-    firstInput = display.textContent;
+    // firstInput = display.textContent;
     secondInput = '';
+    operation = '';
 }
 
 const operatorButtonActions = () => {
-    if (firstInput !== '') {
+    if (operation !== '') {
         performCalculation();
     }
 
@@ -146,6 +147,7 @@ equalButton.addEventListener('click', () => {
     }
     
     performCalculation();
+    
 })
 
 clearButton.addEventListener('click', clearDisplay);
